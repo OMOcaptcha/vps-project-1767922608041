@@ -438,7 +438,7 @@ jobs:
           
           $payload = @{ event_type = "create-vps"; client_payload = @{ vps_name = "vps-project-1767922608041"; restart_time = $currentTime; auto_restart = $true } } | ConvertTo-Json -Depth 2
           
-          Invoke-RestMethod -Uri "https://api.github.com/repos/OMOcaptcha/vps-project-1767922608041/dispatches" -Method Post -Headers $headers -Body $payload -TimeoutSec 30
+          # Invoke-RestMethod -Uri "https://api.github.com/repos/OMOcaptcha/vps-project-1767922608041/dispatches" -Method Post -Headers $headers -Body $payload -TimeoutSec 30
           Write-Host "✅ Workflow restart triggered"
           
           git add $lockFile
